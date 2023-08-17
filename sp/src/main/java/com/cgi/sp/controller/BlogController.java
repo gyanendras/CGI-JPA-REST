@@ -38,5 +38,9 @@ public class BlogController {
 		return bs.getAll();
 	}
 
+	@GetMapping("/blogs/{name}")
+	Iterable<Blog> getByAuthor(@PathVariable String name){
+		return bs.getbyAuthor(name);
+	}
 
 }

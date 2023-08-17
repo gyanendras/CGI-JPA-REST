@@ -36,4 +36,10 @@ public class BlogService implements IBlogService {
 		return br.findAll();
 	}
 
+	@Override
+	public Iterable<Blog> getbyAuthor(String name) {
+		// TODO Auto-generated method stub
+		return br.findByAuthorName(name);
+	}
+
 }
