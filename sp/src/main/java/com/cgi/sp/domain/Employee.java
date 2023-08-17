@@ -11,6 +11,9 @@ import jakarta.persistence.*;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 //Hibernate is a ORM(Object relation mapping) tool. You have to import Hibernate Jars.
 
 @Component
@@ -29,6 +32,7 @@ public class Employee {
 	
 	@ManyToOne
 	@JoinColumn(name="department_id")
+	@JsonBackReference
 	Department department;
 	
 	@Column(name="email")
@@ -81,10 +85,10 @@ public class Employee {
 		this.dob = dob;
 	}
 	
-	public Department getDept() {
+	/*public Department getDept() {
 		return department;
 	}
-
+*/
 	public void setDept(Department department) {
 		this.department = department;
 	}
